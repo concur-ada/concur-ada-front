@@ -1,8 +1,12 @@
 import React from 'react';
+
+import {useSelector} from 'react-redux';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 
 import './Home.css';
-import {useSelector} from 'react-redux';
 
 const Home = () => {
 
@@ -21,6 +25,16 @@ const Home = () => {
                 </p>
                 <hr/>
             </Alert>
+
+            {name &&
+            <Container>
+                <Row className="justify-content-md-center">
+                    <Col lg="3"><Alert variant='success'>
+                        You have {user.badges} Badges!
+                    </Alert></Col>
+                </Row>
+            </Container>
+            }
         </div>
     );
 };

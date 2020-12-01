@@ -3,12 +3,21 @@
     "login": "sam",
     "name": "Sam Smith",
     "role": "Primary Sponsor",
-    "badges": 5
+    "badges": 5,
+    "projectKey": "project-1"
   },
   {
     "login": "will",
     "name": "Will Smith",
     "role": "Project Manager",
-    "badges": 2
+    "badges": 2,
+    "projectKey": "project-1"
+  },
+  {
+    "login": "mary",
+    "name": "Mary Paul",
+    "role": "Primary Sponsor",
+    "badges": 2,
+    "projectKey": "project-2"
   }
 ]

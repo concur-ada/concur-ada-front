@@ -1,42 +1,52 @@
 {
-  "project1": {
+  "project-1": {
     "users": [
       {
         "login": "Sam",
         "name": "Sam Smith",
-        "role": "Primary Sponsor",
-        "badges": 5
+        "role": "Primary Sponsor"
       },
       {
         "login": "Will",
         "name": "Will Smith",
-        "role": "Project Manager",
-        "badges": 2
+        "role": "Project Manager"
       }
     ],
     "stages": {
       "start": {
-        "status": "completed",
-        "users": [
-          {
-            "login": "Sam",
-            "name": "Sam Smith",
-            "role": "Primary Sponsor",
-            "badges": 5
-          },
-          {
-            "login": "Will",
-            "name": "Will Smith",
-            "role": "Project Manager",
-            "badges": 2
-          }
-        ]
+        "status": "completed"
       },
       "configure": {
         "status": "completed"
       },
       "validate": {
         "status": "progress"
+      },
+      "adopt": {
+        "status": "pending"
+      },
+      "success": {
+        "status": "pending"
+      }
+    }
+  },
+  "project-2": {
+    "users": [
+      {
+        "login": "Mary",
+        "name": "Mary Paul",
+        "role": "Primary Sponsor"
+      }
+    ],
+    "stages": {
+      "start": {
+        "status": "completed"
+      },
+      "configure": {
+        "status": "progress"
+      },
+      "validate": {
+        "status": "pending"
       },
       "adopt": {
         "status": "pending"
