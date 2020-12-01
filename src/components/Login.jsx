@@ -6,26 +6,25 @@ import '@ui5/webcomponents/dist/Input';
 import '@ui5/webcomponents/dist/Button';
 import '@ui5/webcomponents/dist/Title';
 
-const Login = (refLoginDialog, refLoginBtn, refCancelBtn) => {
-
-    const user = 'Sam';
-    let headerText = 'Login';
-    if (user) {
-        headerText = 'Change Login';
-    }
+const Login = (refLoginDialog, refLoginBtn, refCancelBtn, refUserName, user) => {
+    const userName = user && user.name;
+    const headerText = userName ? 'Change Login' : 'Login';
 
     return (
         <ui5-dialog id='login-dialog' header-text={headerText}
                     ref={refLoginDialog}>
             <section className='login-form'>
                 <div>
-                    {user &&
+                    {userName &&
                     <p align='center'>
-                        <ui5-title level='H5'>Currently logged in as <span style={{'font-weight':'bold'}}>{user}</span></ui5-title>
+                        <ui5-title level='H5'>Currently logged in as <br/> <span
+                            style={{'fontWeight': 'bold'}}>{userName}, {user.role}</span>
+                        </ui5-title>
                     </p>}
 
                     <ui5-label htmlFor='username' required>Username:</ui5-label>
-                    <ui5-input id='username' placeholder='Enter Username'>></ui5-input>
+                    <ui5-input id='username' ref={refUserName} placeholder='Enter Username'
+                               required='true'/>
                 </div>
             </section>
 

@@ -1,68 +1,60 @@
 import React, {useRef, useEffect, useCallback} from 'react';
-import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 
-import '@ui5/webcomponents-fiori/dist/ShellBar';
-import '@ui5/webcomponents/dist/Card';
-import '@ui5/webcomponents/dist/Panel';
-import '@ui5/webcomponents/dist/Avatar';
-import '@ui5/webcomponents/dist/Link';
+import {ShellBar} from '@ui5/webcomponents-react/lib/ShellBar';
+import {Avatar} from '@ui5/webcomponents-react/lib/Avatar';
 import '@ui5/webcomponents-icons/dist/customer';
 import '@ui5/webcomponents-icons/dist/nav-back';
 
+import {loginAction} from '../services/auth';
 import Login from './Login';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
-    const refTopNavBar = useRef();
+    const refUserName = useRef();
     const refLoginDialog = useRef();
     const refLoginBtn = useRef();
     const refCancelBtn = useRef();
-    const loginDialog = Login(refLoginDialog, refLoginBtn, refCancelBtn);
+    const {user} = useSelector(state => state.user);
+    const loginDialog = Login(refLoginDialog, refLoginBtn, refCancelBtn, refUserName, user);
+    const dispatch = useDispatch();
 
     const handleProfileClick = useCallback(event => {
-        console.log('profile clicked');
-        //check state if a user is already logged in
-        // then change the dialog text
         refLoginDialog.current.open(event.detail.targetRef);
     }, []);
 
-    const handleCancel = useCallback(() => {
-        refLoginDialog.current.close();
+    useEffect(() => {
+        refLoginBtn.current.addEventListener('click', () => {
+            //populate redux store with the new user info
+            dispatch(loginAction(refUserName.current.value));
+            refLoginDialog.current.close();
+        });
+    }, [dispatch]);
+
+    useEffect(() => {
+        refCancelBtn.current.addEventListener('click', () => {
+            refLoginDialog.current.close();
+        });
     }, []);
-
-    const handleLogin = useCallback(() => {
-        console.log('Logged in');
-        //populate redux store with the new user info
-        refLoginDialog.current.close();
-    }, []);
-
-    useEffect(() => {
-        refLoginBtn.current.addEventListener('click', handleLogin);
-    }, [handleLogin]);
-
-    useEffect(() => {
-        refCancelBtn.current.addEventListener('click', handleCancel);
-    }, [handleCancel]);
-
-    useEffect(() => {
-        refTopNavBar.current.addEventListener('profile-click', handleProfileClick);
-    }, [handleProfileClick]);
 
     return (
         <div>
-        <ui5-shellbar
-            id='topNavBar'
-            style={{'--sapShellColor': 'black'}}
-            primary-title='PRODUCTS'
-            ref={refTopNavBar}
-        >
-            <Link slot='startButton' to='/home'>
-                <ui5-button icon='nav-back' design='Transparent' style={{'color':'white'}}
-                            slot='startButton'/>
-            </Link>
-            <img slot='logo' alt='logo' src='images/sap-concur.png'/>
-            <ui5-avatar slot='profile' icon='customer'/>
-
-        </ui5-shellbar>
+            <ShellBar
+                className=""
+                logo={<img slot='logo' alt='logo' src='images/sap-concur.png'/>}
+                onLogoClick={function noRefCheck() {
+                }}
+                onProfileClick={handleProfileClick}
+                primaryTitle="PRODUCTS"
+                profile={<Avatar icon='customer'/>}
+                startButton={<Link slot='startButton' to='/home'>
+                    <ui5-button icon='nav-back' design='Transparent' style={{'color': 'white'}}
+                                slot='startButton'/>
+                </Link>}
+                slot=""
+                style={{'--sapShellColor': 'black'}}
+                tooltip=""
+            />
             {loginDialog}
         </div>
     );

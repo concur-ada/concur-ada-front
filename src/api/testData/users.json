@@ -1,0 +1,14 @@
+[
+  {
+    "login": "sam",
+    "name": "Sam Smith",
+    "role": "Primary Sponsor",
+    "badges": 5
+  },
+  {
+    "login": "will",
+    "name": "Will Smith",
+    "role": "Project Manager",
+    "badges": 2
+  }
+]

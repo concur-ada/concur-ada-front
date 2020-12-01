@@ -1,0 +1,49 @@
+{
+  "project1": {
+    "users": [
+      {
+        "login": "Sam",
+        "name": "Sam Smith",
+        "role": "Primary Sponsor",
+        "badges": 5
+      },
+      {
+        "login": "Will",
+        "name": "Will Smith",
+        "role": "Project Manager",
+        "badges": 2
+      }
+    ],
+    "stages": {
+      "start": {
+        "status": "completed",
+        "users": [
+          {
+            "login": "Sam",
+            "name": "Sam Smith",
+            "role": "Primary Sponsor",
+            "badges": 5
+          },
+          {
+            "login": "Will",
+            "name": "Will Smith",
+            "role": "Project Manager",
+            "badges": 2
+          }
+        ]
+      },
+      "configure": {
+        "status": "completed"
+      },
+      "validate": {
+        "status": "progress"
+      },
+      "adopt": {
+        "status": "pending"
+      },
+      "success": {
+        "status": "pending"
+      }
+    }
+  }
+}
