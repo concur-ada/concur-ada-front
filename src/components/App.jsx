@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import store from '../store/store';
 import Header from './Header';
 import Home from './Home';
+import Landing from './Landing';
 import DemoCounter from './DemoCounter';
 import Footer from './Footer';
 
@@ -24,6 +25,9 @@ const App = () => (
                 <Switch>
                     <Route path='/home'>
                         <Home/>
+                    </Route>
+                    <Route path='/landing'>
+                        <Landing/>
                     </Route>
                     <Route path='/demoCounter'>
                         <DemoCounter/>
