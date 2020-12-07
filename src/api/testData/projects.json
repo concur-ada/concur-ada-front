@@ -4,49 +4,35 @@
       {
         "login": "Sam",
         "name": "Sam Smith",
-        "role": "Primary Sponsor"
+        "role": "primarySponsor"
       },
       {
         "login": "Will",
         "name": "Will Smith",
-        "role": "Project Manager"
+        "role": "projectManager"
       }
     ],
     "stages": {
-      "start": {
-        "status": "completed"
+      "people": {
+        "status": "completed",
+        "primarySponsor": {
+          "name": "Sam Smith",
+          "email": "sam@company.com"
+        },
+        "projectManager": {
+          "name": "Will Smith",
+          "email": "sam@company.com"
+        },
+        "concurAdmin": {
+          "name": "Mary Halford",
+          "email": "mary@company.com"
+        }
       },
       "configure": {
         "status": "completed"
       },
       "validate": {
         "status": "progress"
-      },
-      "adopt": {
-        "status": "pending"
-      },
-      "success": {
-        "status": "pending"
-      }
-    }
-  },
-  "project-2": {
-    "users": [
-      {
-        "login": "Mary",
-        "name": "Mary Paul",
-        "role": "Primary Sponsor"
-      }
-    ],
-    "stages": {
-      "start": {
-        "status": "completed"
-      },
-      "configure": {
-        "status": "progress"
-      },
-      "validate": {
-        "status": "pending"
       },
       "adopt": {
         "status": "pending"

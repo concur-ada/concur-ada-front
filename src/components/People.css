@@ -1,0 +1,25 @@
+
+
+.people {
+    padding: 50px;
+}
+
+.people-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.role {
+    background: green;
+    color: white;
+    margin: 10px;
+    height: 110px;
+    width: calc( (100% / 6) - 30px );
+    padding: 5px;
+}
+
+.role-pending {
+    background: darkgrey;
+}
+

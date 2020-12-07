@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import {useSelector} from 'react-redux';
 import Row from 'react-bootstrap/Row';
@@ -7,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 
 import './Home.css';
+
 
 const Home = () => {
 
@@ -33,7 +35,11 @@ const Home = () => {
                         You have {user.badges} Badges!
                     </Alert></Col>
                 </Row>
+                <Row className="justify-content-md-center">
+                    <Col lg="3"><Link to='/people'>Configure People </Link></Col>
+                </Row>
             </Container>
+
             }
         </div>
     );
