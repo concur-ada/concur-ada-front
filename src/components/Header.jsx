@@ -50,7 +50,7 @@ const Header = () => {
                 onProfileClick={handleProfileClick}
                 primaryTitle="PRODUCTS"
                 profile={<Avatar icon='customer'/>}
-                startButton={<Link slot='startButton' to='/home'>
+                startButton={<Link slot='startButton' to='/landing'>
                     <ui5-button icon='nav-back' design='Transparent' style={{'color': 'white'}}
                                 slot='startButton'/>
                 </Link>}

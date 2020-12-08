@@ -39,12 +39,8 @@ const People = () => {
         <>
             {user ? null : <Redirect to="/login"/>}
 
-            <div className="container-fluid">
-                <div className="row pageTitle">
-                    <div className="col justify-content-md-left">
-                        <h3>Get Started</h3>
-                    </div>
-                </div>
+            <div className="container-fluid pageTitle">
+                <h3>Get Started</h3>
             </div>
 
             <div className="container-fluid people">

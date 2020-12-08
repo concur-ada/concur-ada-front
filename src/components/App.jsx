@@ -36,7 +36,7 @@ const App = () => (
                     <Route path='/people'>
                         <People/>
                     </Route>
-                    <Redirect from='/' to='/home'/>
+                    <Redirect from='/' to='/landing'/>
                 </Switch>
                 <Footer/>
             </div>
