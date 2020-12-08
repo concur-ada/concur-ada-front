@@ -12,7 +12,7 @@
 }
 
 .role {
-    background: green;
+    background: #28a745;
     color: white;
     margin: 10px;
     height: 114px;
@@ -21,21 +21,23 @@
     border-radius: 15px;
     overflow: hidden;
 }
+
+.role-pending {
+    background: darkgrey;
+}
+
 .role:focus,
 .role:hover  {
     background: orange;
 }
 
 .pageTitle {
-    background: green;
+    background:  #28a745;;
     color: white;
     margin: 0px;
     padding: 10px;
 }
 
-.role-pending {
-    background: darkgrey;
-}
 
 .arrow1 {
     width: 0;
@@ -51,7 +53,8 @@
     height: auto;
     padding: 12px;
     margin: 10px;
-    color: black;
+    color: #28a745;
+    font-size: 1.5rem;
     background-color: white;
     display: flex;
     flex-direction: column;

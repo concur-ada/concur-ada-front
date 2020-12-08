@@ -6,13 +6,15 @@ import {Button} from '@ui5/webcomponents-react/lib/Button';
 import {Input} from '@ui5/webcomponents-react/lib/Input';
 import {Label} from '@ui5/webcomponents-react/lib/Label';
 import {Dialog} from '@ui5/webcomponents-react/lib/Dialog';
+import {Link} from '@ui5/webcomponents-react/lib/Link';
+
 import {setRoleInfo} from '../services/project';
 
 const RoleTile = props => {
     const roleInfo = props.roleInfo;
     const hasData = roleInfo.name ? true : false;
     const className = hasData ? 'role' : 'role role-pending';
-    const cardStatus = hasData ? 'Edit' : 'Add';
+    const addOrEditLinkText = hasData ? 'Edit' : 'Add';
     const dispatch = useDispatch();
     const refEditDialog = useRef();
     const refName = useRef();
@@ -39,8 +41,9 @@ const RoleTile = props => {
     const editModal = (<Dialog id='role-dialog' header-text={headerText}
                                ref={refEditDialog}>
         <section className='role-form'>
-            <div>
-                <p>
+            <div className="container-fluid">
+                <div className="row" style={{'padding': '10px'}}>
+                    <div className="col">
                     <Label htmlFor='name' required>Name :</Label>
                     <Input id='name'
                            placeholder='Enter Username'
@@ -48,8 +51,10 @@ const RoleTile = props => {
                            required='true'
                            ref={refName}
                            value={roleInfo.name}/>
-                </p>
-                <p>
+                    </div>
+                </div>
+                <div className="row" style={{'padding': '10px'}}>
+                    <div className="col">
                     <Label htmlFor='email' required>Email :</Label>
                     <Input id='email'
                            placeholder='Enter Email'
@@ -57,7 +62,8 @@ const RoleTile = props => {
                            type="Email"
                            value={roleInfo.email}
                            required='true'/>
-                </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -69,15 +75,28 @@ const RoleTile = props => {
     </Dialog>);
     return (
         <div className={className}>
-            <Card heading={roleInfo.title} status={cardStatus}
+            <Card heading={roleInfo.title} status={props.status}
                   class="small"
                   onHeaderClick={() => handleHeaderClick()}
                   headerInteractive='true' tooltip={props.toolTip}>
-                <div>
-                    <p style={{'margin': '10px'}}>
-                        <Title level="H5">{roleInfo.name}</Title>
-                    </p>
+
+                <div className="container">
+                    <div className="row" style={{'padding': '10px'}}>
+                        <div className="col text-wrap"><Title level="H5">{roleInfo.name}</Title></div>
+                        <div className="col text-right" className="justify-content-end">
+                            <Link
+                            className=""
+                            onClick={() => handleHeaderClick()}
+                            slot=""
+                            style={{}}
+                            tooltip=""
+                        >
+                            {addOrEditLinkText}
+                        </Link>
+                        </div>
+                    </div>
                 </div>
+
             </Card>
             {editModal}
         </div>

@@ -39,30 +39,32 @@ const People = () => {
         <>
             {user ? null : <Redirect to="/login"/>}
 
-            <div class="container-fluid">
-                <div class="row pageTitle">
-                    <div class="col justify-content-md-left">
+            <div className="container-fluid">
+                <div className="row pageTitle">
+                    <div className="col justify-content-md-left">
                         <h3>Get Started</h3>
                     </div>
                 </div>
             </div>
 
-            <div class="people">
-                <div className="people-row">
+            <div className="container-fluid people">
+                <div className="row people-row">
                     <RoleTile
                         roleInfo={getRoleInfo('primarySponsor')}
                         toolTip='Main Business Sponsor'
+                        status='Required'
                     />
                     <RoleTile
                         roleInfo={getRoleInfo('projectManager')}
                         toolTip='Person who will lead the project delivery'
+                        status='Required'
                     />
                     <RoleTile
                         roleInfo={getRoleInfo('concurAdmin')}
                         toolTip='Administrator from Concur'
                     />
                 </div>
-                <div className="people-row">
+                <div className="row people-row">
                     <RoleTile
                         roleInfo={getRoleInfo('technicalLead')}
                         toolTip='Person who will be responsible for any company technical requirements'
@@ -78,11 +80,11 @@ const People = () => {
                 </div>
             </div>
 
-            <div class="container-fluid">
-                <div class="float-right" style={{'padding-right': '200px'}}>
-                    <a class='whatsNext' href='#' style={{'text-decoration': 'none'}}>
+            <div className="container-fluid">
+                <div className="float-right" style={{'paddingRight': '200px'}}>
+                    <a className='whatsNext' href='#' style={{'textDecoration': 'none'}}>
                         <h4>What's next?</h4>
-                        <div className="arrow" style={{'margin-left': '30px'}}>
+                        <div className="arrow" style={{'marginLeft': '30px'}}>
                             <div className="line"></div>
                             <div className="pointer"></div>
                         </div>
