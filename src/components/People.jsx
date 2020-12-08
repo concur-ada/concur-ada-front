@@ -1,22 +1,13 @@
 import React from 'react';
-
-import {useState} from 'react';
-import {Card} from '@ui5/webcomponents-react/lib/Card';
-import ConfigureRoleModal from './ConfigureRoleModal';
+import {useSelector} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import RoleTile from './RoleTile';
 import './People.css';
-import {useDispatch, useSelector} from 'react-redux';
 
 const stage = 'people';
 
 const People = () => {
-
-    const [isOpen, setIsOpen] = useState(false);
-    let roleInfo = {
-           test:'testing'
-    };
-
-    const dispatch = useDispatch();
+    const user = useSelector(state => state.user.user);
 
     const people = useSelector(state => {
         if (state.project && state.project.project) {
@@ -25,65 +16,62 @@ const People = () => {
         return null;
     });
 
-    const getRoleFromState =  role => people && people[role];
+    const getRoleFromState = role => people && people[role];
     const title = {
-        primarySponsor : 'Primary Sponsor',
+        primarySponsor: 'Primary Sponsor',
         projectManager: 'Project Manager',
         concurAdmin: 'Concur Admin',
         technicalLead: 'Technical Lead',
-
+        changeOwner: 'Change Owner',
+        other: 'Other',
     };
 
     const getRoleInfo = role => {
         return {
             title: title[role],
+            role: role,
             ...getRoleFromState(role)
         };
     };
 
-    const handlePeopleTileClick = (role) => {
-        roleInfo = {...getRoleInfo(role)};
-        console.log('handlePeopleTileClick - roleInfo ', roleInfo);
-        setIsOpen(true);
-        return (<ConfigureRoleModal roleInfo={roleInfo} show={true}
-                                    handleClose={() => handleClose()}/>);
-    };
-
-    const handleClose = () => {
-        setIsOpen(false);
-    };
-
     return (
-        <div className="people">
-            <div className="people-row">
-                <RoleTile
-                    roleInfo={getRoleInfo('primarySponsor')}
-                    handlePeopleTileClick={() => handlePeopleTileClick('primarySponsor')}
-                />
-                <RoleTile
-                    roleInfo={getRoleInfo('projectManager')}
-                    handlePeopleTileClick={() => handlePeopleTileClick('projectManager')}
-                />
-                <RoleTile
-                    roleInfo={getRoleInfo('concurAdmin')}
-                    handlePeopleTileClick={handlePeopleTileClick}
-                />
-                <RoleTile
-                    roleInfo={getRoleInfo('technicalLead')}
-                    handlePeopleTileClick={handlePeopleTileClick}
-                />
-                <div className="role role-pending">
-                    <Card heading="Change Owner" status="Pending"
-                          className="medium"></Card>
-                </div>
-                <div className="role role-pending">
-                    <Card heading="Other" status="Pending"
-                          className="medium"></Card>
+        <>
+            {user ? null : <Redirect to="/login"/>}
+
+            <div className="container-fluid">
+                <div className="row pageTitle">
+                    <div className="col justify-content-md-left">
+                        <h3>Get Started</h3>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div className="people">
+                <div className="people-row">
+                    <RoleTile
+                        roleInfo={getRoleInfo('primarySponsor')}
+                    />
+                    <RoleTile
+                        roleInfo={getRoleInfo('projectManager')}
+                    />
+                    <RoleTile
+                        roleInfo={getRoleInfo('concurAdmin')}
+                    />
+                </div>
+                    <div className="people-row">
+                    <RoleTile
+                        roleInfo={getRoleInfo('technicalLead')}
+                    />
+                    <RoleTile
+                        roleInfo={getRoleInfo('changeOwner')}
+                    />
+                    <RoleTile
+                        roleInfo={getRoleInfo('other')}
+                    />
+                </div>
+            </div>
+        </>
     );
 };
-
 
 export default People;

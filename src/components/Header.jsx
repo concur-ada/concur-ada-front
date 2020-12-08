@@ -25,6 +25,9 @@ const Header = () => {
 
     useEffect(() => {
         refLoginBtn.current.addEventListener('click', () => {
+            if (!refUserName.current.value) {
+                return;
+            }
             //populate redux store with the new user info
             dispatch(loginAction(refUserName.current.value));
             refLoginDialog.current.close();

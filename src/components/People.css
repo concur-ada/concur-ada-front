@@ -1,25 +1,53 @@
 
 
 .people {
-    padding: 50px;
+    padding: 30px;
 }
 
 .people-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    margin: 30px;
 }
 
 .role {
     background: green;
     color: white;
     margin: 10px;
-    height: 110px;
-    width: calc( (100% / 6) - 30px );
+    height: 114px;
+    width: calc((100% / 3) - 190px);
     padding: 5px;
+    border-radius: 15px;
+    overflow: hidden;
 }
+.role:focus,
+.role:hover  {
+    background: orange;
+}
+
+.pageTitle {
+    background: green;
+    color: white;
+    margin: 0px;
+    padding: 10px;
+}
+
+
 
 .role-pending {
     background: darkgrey;
+}
+
+@media only screen and (max-width: 600px) {
+    .role {
+        background: green;
+        color: white;
+        margin: 10px;
+        height: 139px;
+        width: calc( (100% / 6) - 30px );
+        padding: 3px;
+        border-radius: 10px;
+    }
 }
 

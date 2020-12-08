@@ -21,11 +21,41 @@
         },
         "projectManager": {
           "name": "Will Smith",
-          "email": "sam@company.com"
+          "email": "will@company.com"
         },
         "concurAdmin": {
-          "name": "Mary Halford",
-          "email": "mary@company.com"
+          "name": "Lily Halford",
+          "email": "lily@company.com"
+        }
+      },
+      "configure": {
+        "status": "completed"
+      },
+      "validate": {
+        "status": "progress"
+      },
+      "adopt": {
+        "status": "pending"
+      },
+      "success": {
+        "status": "pending"
+      }
+    }
+  },
+  "project-2": {
+    "users": [
+      {
+        "login": "Mary",
+        "name": "Mary Paul",
+        "role": "primarySponsor"
+      }
+    ],
+    "stages": {
+      "people": {
+        "status": "progress",
+        "primarySponsor": {
+          "name": "Mary Paul",
+          "email": "marypaul@company.com"
         }
       },
       "configure": {

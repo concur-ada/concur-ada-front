@@ -9,37 +9,30 @@ import Alert from 'react-bootstrap/Alert';
 
 import './Home.css';
 
-
 const Home = () => {
 
     const {user} = useSelector(state => state.user);
     const name = user && user.name;
-
+    const badges = user && user.badges || 0;
     return (
         <div>
-            <p>
-                <ui5-title>Home [Placeholder]</ui5-title>
-            </p>
             <Alert variant='success'>
                 <Alert.Heading>Hey, {name} nice to see you</Alert.Heading>
                 <p>
-                    Just an example of React Bootstrap
+                    <Alert variant='success'>
+                        You have {badges} Badges!
+                    </Alert>
                 </p>
-                <hr/>
             </Alert>
 
             {name &&
             <Container>
                 <Row className="justify-content-md-center">
-                    <Col lg="3"><Alert variant='success'>
-                        You have {user.badges} Badges!
-                    </Alert></Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col lg="3"><Link to='/people'>Configure People </Link></Col>
+                    <Col lg="3"><Link to='/people'><Alert variant='success'>
+                        Configure People
+                    </Alert> </Link></Col>
                 </Row>
             </Container>
-
             }
         </div>
     );
