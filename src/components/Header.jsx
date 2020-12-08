@@ -8,7 +8,7 @@ import '@ui5/webcomponents-icons/dist/nav-back';
 
 import {loginAction} from '../services/auth';
 import Login from './Login';
-import {Link} from 'react-router-dom';
+import {Link, useHistory } from 'react-router-dom';
 
 const Header = () => {
     const refUserName = useRef();
@@ -23,6 +23,7 @@ const Header = () => {
         refLoginDialog.current.open(event.detail.targetRef);
     }, []);
 
+    const history = useHistory();
     useEffect(() => {
         refLoginBtn.current.addEventListener('click', () => {
             if (!refUserName.current.value) {
@@ -30,9 +31,11 @@ const Header = () => {
             }
             //populate redux store with the new user info
             dispatch(loginAction(refUserName.current.value));
+            //redirect to landing page after a login
+            history.push('/landing');
             refLoginDialog.current.close();
         });
-    }, [dispatch]);
+    }, [dispatch, history]);
 
     useEffect(() => {
         refCancelBtn.current.addEventListener('click', () => {

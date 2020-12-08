@@ -14,6 +14,7 @@ import Landing from './Landing';
 import DemoCounter from './DemoCounter';
 import Footer from './Footer';
 import People from './People';
+import Configure from './Configure';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -31,10 +32,13 @@ const App = () => (
                         <Landing/>
                     </Route>
                     <Route path='/demoCounter'>
-                            <DemoCounter/>
+                        <DemoCounter/>
                     </Route>
                     <Route path='/people'>
                         <People/>
+                    </Route>
+                    <Route path='/configure'>
+                        <Configure/>
                     </Route>
                     <Redirect from='/' to='/landing'/>
                 </Switch>

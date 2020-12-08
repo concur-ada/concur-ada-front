@@ -37,7 +37,7 @@ const Landing = () => {
                                                     <div class="event-date bg-soft-success text-success">2</div>
                                                     <h5 class="font-size-16 text-success">Configure</h5>
                                                     <div>
-                                                        <a href="#" class="btn btn-primary btn-sm">More Info</a>
+                                                        <Link to='/configure' class="btn btn-primary btn-sm">More Info</Link>
                                                     </div>
                                                 </div>
                                             </li>

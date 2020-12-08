@@ -29,43 +29,6 @@
     background: orange;
 }
 
-.whatsNext {
-    height: auto;
-    padding: 12px;
-    margin: 10px;
-    color: #28a745;
-    font-size: 1.5rem;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.whatsNext:hover {
-    color: white;
-    background-color: grey;
-}
-
-.arrow {
-    width: 80px;
-}
-
-.line {
-    margin-top: 14px;
-    width: 50px;
-    background: orange;
-    height: 10px;
-    float: left;
-}
-
-.pointer {
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 30px solid orange;
-    float: right;
-}
 
 
 

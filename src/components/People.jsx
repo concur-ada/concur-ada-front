@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import RoleTile from './RoleTile';
 import './People.css';
 import '@ui5/webcomponents-icons/dist/arrow-right';
@@ -17,6 +17,8 @@ const People = () => {
         return null;
     });
 
+    const status = people && people.status;
+    const nextLinkClass = status === 'completed' ? 'whatsNext': 'whatsNext disabled-link' ;
     const getRoleFromState = role => people && people[role];
     const title = {
         primarySponsor: 'Primary Sponsor',
@@ -76,18 +78,35 @@ const People = () => {
                 </div>
             </div>
 
-            <div className="container-fluid">
-                <div className="float-right" style={{'paddingRight': '200px'}}>
-                    <a className='whatsNext' href='#' style={{'textDecoration': 'none'}}>
-                        <h4>What's next?</h4>
-                        <div className="arrow" style={{'marginLeft': '30px'}}>
-                            <div className="line"></div>
-                            <div className="pointer"></div>
+            <div id="preNextStage" className="container-fluid">
+                <div className="row justify-content-around">
+                    <div className="col-3">
+                        <div className="float-left" >
+
                         </div>
-                    </a>
+                    </div>
+                    <div className="col-3">
+                        <div className="float-none">
+                            <Link className='whatsNext' to='/landing'
+                                  style={{'textDecoration': 'none'}}>
+                                <h4>Home</h4>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="col-3">
+                        <div className="float-right">
+                            <Link className={nextLinkClass} to='/configure'
+                                  style={{'textDecoration': 'none'}}>
+                                <h4>Next: Configure</h4>
+                                <div className="arrow" style={{'marginLeft': '30px'}}>
+                                    <div className="right-pointer-line"></div>
+                                    <div className="right-pointer"></div>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </>
     );
 };
