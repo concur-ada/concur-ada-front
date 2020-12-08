@@ -13,7 +13,7 @@ const Home = () => {
 
     const {user} = useSelector(state => state.user);
     const name = user && user.name;
-    const badges = user && user.badges || 0;
+    const badges = (user && user.badges) || 0;
     return (
         <div>
             <Alert variant='success'>

@@ -33,21 +33,57 @@
     padding: 10px;
 }
 
-
-
 .role-pending {
     background: darkgrey;
 }
 
-@media only screen and (max-width: 600px) {
-    .role {
-        background: green;
-        color: white;
-        margin: 10px;
-        height: 139px;
-        width: calc( (100% / 6) - 30px );
-        padding: 3px;
-        border-radius: 10px;
-    }
+.arrow1 {
+    width: 0;
+    height: 0;
+    border-left: 15px solid orange;
+    border-right: 25px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+
 }
+
+.whatsNext {
+    height: auto;
+    padding: 12px;
+    margin: 10px;
+    color: black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.whatsNext:hover {
+    color: white;
+    background-color: grey;
+}
+
+.arrow {
+    width: 80px;
+}
+
+.line {
+    margin-top: 14px;
+    width: 50px;
+    background: orange;
+    height: 10px;
+    float: left;
+}
+
+.pointer {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid orange;
+    float: right;
+}
+
+
+
 

@@ -72,8 +72,7 @@ const RoleTile = props => {
             <Card heading={roleInfo.title} status={cardStatus}
                   class="small"
                   onHeaderClick={() => handleHeaderClick()}
-                  headerInteractive='true'
-                  style={{'--sapTextColor': 'blue', '--sapBackgroundColor': 'orange'}}>
+                  headerInteractive='true' tooltip={props.toolTip}>
                 <div>
                     <p style={{'margin': '10px'}}>
                         <Title level="H5">{roleInfo.name}</Title>
