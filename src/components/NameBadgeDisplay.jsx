@@ -5,7 +5,7 @@ import { Bar } from '@ui5/webcomponents-react/lib/Bar';
 import '@ui5/webcomponents-icons/dist/badge';
 import '@ui5/webcomponents/dist/Icon.js';
 
-const ContentBar = () => {
+const NameBadgeDisplay = () => {
 
   const {user} = useSelector(state => state.user);
     const name = user && user.name;
@@ -26,6 +26,6 @@ const ContentBar = () => {
   );
 };
 
-export default ContentBar;
+export default NameBadgeDisplay;
 
 
