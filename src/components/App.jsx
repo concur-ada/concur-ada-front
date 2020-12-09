@@ -13,6 +13,8 @@ import Home from './Home';
 import Landing from './Landing';
 import DemoCounter from './DemoCounter';
 import Footer from './Footer';
+import People from './People';
+import Configure from './Configure';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -32,7 +34,13 @@ const App = () => (
                     <Route path='/demoCounter'>
                         <DemoCounter/>
                     </Route>
-                    <Redirect from='/' to='/home'/>
+                    <Route path='/people'>
+                        <People/>
+                    </Route>
+                    <Route path='/configure'>
+                        <Configure/>
+                    </Route>
+                    <Redirect from='/' to='/landing'/>
                 </Switch>
                 <Footer/>
             </div>

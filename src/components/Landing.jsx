@@ -1,164 +1,102 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Alert from 'react-bootstrap/Alert';
-
+import {Link} from 'react-router-dom';
 import './Landing.css';
 
 const Landing = () => {
-
     const { user } = useSelector(state => state.user);
-    const {project} = useSelector(state => state.project);
     const name = user && user.name;
-    let start,configure,validate,adopt,success;
-    let startH5,configureH5,validateH5,adoptH5,successH5;
-    configure=start=validate=adopt=success='event-date bg-soft-primary text-primary';
-    configureH5=startH5=validateH5=adoptH5=successH5='font-size-16 text-primary';
-
-    const projectStages = project&&project.stages;
-    if(projectStages!=null){
-        if(projectStages.start.status==='pending'){
-            console.log('pending');
-            start='event-date bg-soft-danger text-danger';
-            startH5='font-size-16 text-danger';
-        }else if(projectStages.start.status==='completed'){
-            console.log('completed');
-            start='event-date bg-soft-success text-success';
-            startH5='font-size-16 text-success';         
-        }else if(projectStages.start.status==='progress'){
-            console.log('completed');
-            start='event-date bg-soft-warning text-warning';
-            startH5='font-size-16 text-warning';         
+    const badges = (user && user.badges) || 0;
+    const { project } = useSelector(state => state.project);
+    let start, configure, validate, adopt, success;
+    configure = start = validate = adopt = success = 'event-date bg-soft-primary';
+    const projectStages = project && project.stages;
+    if (projectStages != null) {
+        if (projectStages.start.status === 'pending') {
+            start = 'event-date bg-soft-danger text-danger';
+        } else if (projectStages.start.status === 'completed') {
+            start = 'event-date bg-soft-success text-success';
+        } else if (projectStages.start.status === 'progress') {
+            start = 'event-date bg-soft-warning text-warning';
         }
-        if(projectStages.configure.status==='pending'){
-            console.log('pending');
-            configure='event-date bg-soft-danger text-danger';
-            configureH5='font-size-16 text-danger';
-        }else if(projectStages.configure.status==='completed'){
-            console.log('completed');
-            configure='event-date bg-soft-success text-success';
-            configureH5='font-size-16 text-success';         
-        }else if(projectStages.configure.status==='progress'){
-            console.log('completed');
-            configure='event-date bg-soft-warning text-warning';
-            configureH5='font-size-16 text-warning';         
+        if (projectStages.configure.status === 'pending') {
+            configure = 'event-date bg-soft-danger text-danger';
+        } else if (projectStages.configure.status === 'completed') {
+            configure = 'event-date bg-soft-success text-success';
+        } else if (projectStages.configure.status === 'progress') {
+            configure = 'event-date bg-soft-warning text-warning';
         }
-        if(projectStages.validate.status==='pending'){
-            console.log('pending');
-            validate='event-date bg-soft-danger text-danger';
-            validateH5='font-size-16 text-danger';
-        }else if(projectStages.validate.status==='completed'){
-            console.log('completed');
-            validate='event-date bg-soft-success text-success';
-            validateH5='font-size-16 text-success';         
-        }else if(projectStages.validate.status==='progress'){
-            console.log('completed');
-            validate='event-date bg-soft-warning text-warning';
-            validateH5='font-size-16 text-warning';         
+        if (projectStages.validate.status === 'pending') {
+            validate = 'event-date bg-soft-danger text-danger';
+        } else if (projectStages.validate.status === 'completed') {
+            validate = 'event-date bg-soft-success text-success';
+        } else if (projectStages.validate.status === 'progress') {
+            validate = 'event-date bg-soft-warning text-warning';
         }
-        if(projectStages.adopt.status==='pending'){
-            console.log('pending');
-            adopt='event-date bg-soft-danger text-danger';
-            adoptH5='font-size-16 text-danger';
-        }else if(projectStages.adopt.status==='completed'){
-            console.log('completed');
-            adopt='event-date bg-soft-success text-success';
-            adoptH5='font-size-16 text-success';         
-        }else if(projectStages.adopt.status==='completed'){
-            console.log('completed');
-            adopt='event-date bg-soft-warning text-warning';
-            adoptH5='font-size-16 text-warning';         
+        if (projectStages.adopt.status === 'pending') {
+            adopt = 'event-date bg-soft-danger text-danger';
+        } else if (projectStages.adopt.status === 'completed') {
+            adopt = 'event-date bg-soft-success text-success';
+        } else if (projectStages.adopt.status === 'completed') {
+            adopt = 'event-date bg-soft-warning text-warning';
         }
-        if(projectStages.success.status==='pending'){
-            console.log('pending');
-            success='event-date bg-soft-danger text-danger';
-            successH5='font-size-16 text-danger';
-        }else if(projectStages.success.status==='completed'){
-            console.log('completed');
-            success='event-date bg-soft-success text-success';
-            successH5='font-size-16 text-success';         
-        }else if(projectStages.success.status==='progress'){
-            console.log('completed');
-            success='event-date bg-soft-warning text-warning';
-            successH5='font-size-16 text-warning';         
+        if (projectStages.success.status === 'pending') {
+            success = 'event-date bg-soft-danger text-danger';
+        } else if (projectStages.success.status === 'completed') {
+            success = 'event-date bg-soft-success text-success';
+        } else if (projectStages.success.status === 'progress') {
+            success = 'event-date bg-soft-warning text-warning';
         }
     }
 
     return (
-        <div>
-                <p>
-                    <ui5-title>Home [Placeholder]</ui5-title>
-                </p>
-                <Alert variant='success'>
-                    <Alert.Heading>Hey, {name} nice to see you</Alert.Heading>
-                    <p>
-                        Just an example of React Bootstrap
-                </p>
-                    <hr />
-                 
-                </Alert>
-
-                {name &&
-                    <Container>
-                        <Row className="justify-content-md-center">
-                            <Col lg="3"><Alert variant='success'>
-                                You have {user.badges} Badges!
-                    </Alert></Col>
-                        </Row>
-                    </Container>
-                }
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="card">
-                                <div className="card-body">
-                                    <div className="hori-timeline" dir="ltr">
-                                        <ul className="list-inline events">
-                                            <li className="list-inline-item event-list">
-                                                <div className="px-5">
-                                                    <div className={start}>1</div>
-                                                    <h5 className={startH5}>Get Started</h5>
+        <>
+            <div className="container-fluid pageTitle">
+                <h3>Hey, {name} nice to see you</h3>
+                {!name &&
+                <span>Login to checkout the implementation journey of Concur Expense</span>}
+            </div>
+            {name &&
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="hori-timeline" dir="ltr">
+                                        <ul class="list-inline events">
+                                            <li class="list-inline-item event-list">
+                                            <div className={start}>
+                                                    <h5 className="font-size-16">Get Started</h5>
                                                     <div>
-                                                        <button href="#" className="btn btn-primary btn-sm ">More info</button>
-                                                    </div>
+                                                    <Link to='/people' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                             <li className="list-inline-item event-list">
-                                                <div className="px-5">
-                                                    <div className={configure}>2</div>
-                                                    <h5 className={configureH5}>Configure</h5>
+                                                <div className={configure}>
+                                                    <h5 className="font-size-16">Configure</h5>
                                                     <div>
-                                                        <button href="#" className="btn btn-primary btn-sm">More Info</button>
-                                                    </div>
+                                                    <Link to='/configure' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                             <li className="list-inline-item event-list">
-                                                <div className="px-5">
-                                                    <div className={validate}>3</div>
-                                                    <h5 className={validateH5}>Validate</h5>
+                                                <div className={validate}>
+                                                    <h5 className="font-size-16">Validate</h5>
                                                     <div>
-                                                        <button className="btn btn-primary btn-sm">More Info</button>
-                                                    </div>
+                                                    <Link to='/validate' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                             <li className="list-inline-item event-list">
-                                                <div className="px-5">
-                                                    <div className={adopt}>4</div>
-                                                    <h5 className={adoptH5}>Adopt</h5>
+                                                <div className={adopt}>
+                                                    <h5 className="font-size-16">Adopt</h5>
                                                     <div>
-                                                        <button href="#" className="btn btn-primary btn-sm">More Info</button>
-                                                    </div>
+                                                    <Link to='/adopt' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                             <li className="list-inline-item event-list">
-                                                <div className="px-5">
-                                                    <div className={success}>5</div>
-                                                    <h5 className={successH5}>Success</h5>
+                                                <div className={success}>
+                                                    <h5 className="font-size-16">Success</h5>
                                                     <div>
-                                                        <button href="#" className="btn btn-primary btn-sm">More Info</button>
-                                                    </div>
+                                                    <Link to='/success' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                         </ul>
@@ -168,8 +106,8 @@ const Landing = () => {
                         </div>
                     </div>
                 </div>
-
-            </div>
+}
+        </>
     );
 };
 

@@ -1,0 +1,39 @@
+.people {
+    padding: 30px;
+}
+
+.people-row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.role {
+    background: #28a745;
+    color: white;
+    margin: 10px;
+    height: 114px;
+    width: calc((100% / 3) - 190px);
+    padding: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.role-pending {
+    background: darkgrey;
+}
+
+.role:focus,
+.role:hover  {
+    background: orange;
+}
+
+#roleCard::part(status) {
+    color: red;
+}
+
+
+
+
+
