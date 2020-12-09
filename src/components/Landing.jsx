@@ -1,43 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Alert from 'react-bootstrap/Alert';
-
+import {Link} from 'react-router-dom';
 import './Landing.css';
 
 const Landing = () => {
-
     const { user } = useSelector(state => state.user);
     const name = user && user.name;
+    const badges = (user && user.badges) || 0;
 
     return (
-        <div>
-
-           
-
-
-                <p>
-                    <ui5-title>Home [Placeholder]</ui5-title>
-                </p>
-                <Alert variant='success'>
-                    <Alert.Heading>Hey, {name} nice to see you</Alert.Heading>
-                    <p>
-                        Just an example of React Bootstrap
-                </p>
-                    <hr />
-                </Alert>
-
-                {name &&
-                    <Container>
-                        <Row className="justify-content-md-center">
-                            <Col lg="3"><Alert variant='success'>
-                                You have {user.badges} Badges!
-                    </Alert></Col>
-                        </Row>
-                    </Container>
-                }
+        <>
+            <div className="container-fluid pageTitle">
+                <h3>Hey, {name} nice to see you</h3>
+                {!name &&
+                <span>Login to checkout the implementation journey of Concur Expense</span>}
+            </div>
+            {name &&
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
@@ -50,7 +28,7 @@ const Landing = () => {
                                                     <div class="event-date bg-soft-success text-success">1</div>
                                                     <h5 class="font-size-16 text-success">Get Started</h5>
                                                     <div>
-                                                        <a href="#" class="btn btn-primary btn-sm ">More info</a>
+                                                        <Link to='/people' class="btn btn-primary btn-sm">More Info</Link>
                                                     </div>
                                                 </div>
                                             </li>
@@ -59,7 +37,7 @@ const Landing = () => {
                                                     <div class="event-date bg-soft-success text-success">2</div>
                                                     <h5 class="font-size-16 text-success">Configure</h5>
                                                     <div>
-                                                        <a href="#" class="btn btn-primary btn-sm">More Info</a>
+                                                        <Link to='/configure' class="btn btn-primary btn-sm">More Info</Link>
                                                     </div>
                                                 </div>
                                             </li>
@@ -97,8 +75,8 @@ const Landing = () => {
                         </div>
                     </div>
                 </div>
-
-            </div>
+}
+        </>
     );
 };
 
