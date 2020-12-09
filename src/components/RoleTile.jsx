@@ -13,7 +13,8 @@ import {setRoleInfo} from '../services/project';
 const RoleTile = props => {
     const roleInfo = props.roleInfo;
     const hasData = roleInfo.name ? true : false;
-    const className = hasData ? 'role' : 'role role-pending';
+    const status = props.status;
+    const className = hasData ? 'role' : (status === 'Required' ?  'role role-required' : 'role role-pending');
     const addOrEditLinkText = hasData ? 'Edit' : 'Add';
     const dispatch = useDispatch();
     const refEditDialog = useRef();
@@ -75,7 +76,7 @@ const RoleTile = props => {
     </Dialog>);
     return (
         <div className={className}>
-            <Card id="roleCard" heading={roleInfo.title} status={props.status}
+            <Card id="roleCard" heading={roleInfo.title} status={status}
                   class="small"
                   onHeaderClick={() => handleHeaderClick()}
                   headerInteractive='true' tooltip={props.toolTip}>
