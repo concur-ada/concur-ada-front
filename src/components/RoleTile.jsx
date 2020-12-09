@@ -75,7 +75,7 @@ const RoleTile = props => {
     </Dialog>);
     return (
         <div className={className}>
-            <Card heading={roleInfo.title} status={props.status}
+            <Card id="roleCard" heading={roleInfo.title} status={props.status}
                   class="small"
                   onHeaderClick={() => handleHeaderClick()}
                   headerInteractive='true' tooltip={props.toolTip}>

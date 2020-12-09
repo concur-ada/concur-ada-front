@@ -29,6 +29,10 @@
     background: orange;
 }
 
+#roleCard::part(status) {
+    color: red;
+}
+
 
 
 
