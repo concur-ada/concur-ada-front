@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
+import ContentBar from './NameBadgeDisplay';
+import '@ui5/webcomponents-icons/dist/badge';
+import './Landing.css';
 import './Landing.css';
 
 const Landing = () => {
@@ -10,10 +13,8 @@ const Landing = () => {
 
     return (
         <>
-            <div className="container-fluid pageTitle">
-                <h3>Hey, {name} nice to see you</h3>
-                {!name &&
-                <span>Login to checkout the implementation journey of Concur Expense</span>}
+            <div>
+            <ContentBar className='contentBar'></ContentBar>
             </div>
             {name &&
                 <div class="container-fluid">
