@@ -63,6 +63,14 @@
     border-right: 30px solid orange;
     float: left;
 }
+.nameBadgeHeader{
+    background-color:black;
+    margin-top: 5px;
+    color:#f0ab00;
+    font-weight:bold;
+    font-size: xx-large;
+}
+
 
 
 
