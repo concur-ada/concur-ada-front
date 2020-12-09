@@ -6,7 +6,6 @@ import './Landing.css';
 const Landing = () => {
     const { user } = useSelector(state => state.user);
     const name = user && user.name;
-    const badges = (user && user.badges) || 0;
     const { project } = useSelector(state => state.project);
     let start, configure, validate, adopt, success;
     configure = start = validate = adopt = success = 'event-date bg-soft-primary';
@@ -51,11 +50,6 @@ const Landing = () => {
 
     return (
         <>
-            <div className="container-fluid pageTitle">
-                <h3>Hey, {name} nice to see you</h3>
-                {!name &&
-                    <span>Login to checkout the implementation journey of Concur Expense</span>}
-            </div>
             {name &&
                 <div class="container-fluid">
                     <div class="row">

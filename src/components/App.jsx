@@ -6,6 +6,7 @@ import {
     Redirect
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import NameBadgeDisplay from './NameBadgeDisplay';
 
 import store from '../store/store';
 import Header from './Header';
@@ -24,6 +25,7 @@ const App = () => (
         <Router>
             <div>
                 <Header/>
+                <NameBadgeDisplay/>
                 <Switch>
                     <Route path='/home'>
                         <Home/>
