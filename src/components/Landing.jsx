@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Landing.css';
 
 const Landing = () => {
@@ -12,11 +12,11 @@ const Landing = () => {
     configure = start = validate = adopt = success = 'event-date bg-soft-primary';
     const projectStages = project && project.stages;
     if (projectStages != null) {
-        if (projectStages.start.status === 'pending') {
+        if (projectStages.people.status === 'pending') {
             start = 'event-date bg-soft-danger text-danger';
-        } else if (projectStages.start.status === 'completed') {
+        } else if (projectStages.people.status === 'completed') {
             start = 'event-date bg-soft-success text-success';
-        } else if (projectStages.start.status === 'progress') {
+        } else if (projectStages.people.status === 'progress') {
             start = 'event-date bg-soft-warning text-warning';
         }
         if (projectStages.configure.status === 'pending') {
@@ -54,7 +54,7 @@ const Landing = () => {
             <div className="container-fluid pageTitle">
                 <h3>Hey, {name} nice to see you</h3>
                 {!name &&
-                <span>Login to checkout the implementation journey of Concur Expense</span>}
+                    <span>Login to checkout the implementation journey of Concur Expense</span>}
             </div>
             {name &&
                 <div class="container-fluid">
@@ -65,38 +65,38 @@ const Landing = () => {
                                     <div class="hori-timeline" dir="ltr">
                                         <ul class="list-inline events">
                                             <li class="list-inline-item event-list">
-                                            <div className={start}>
+                                                <div className={start}>
                                                     <h5 className="font-size-16">Get Started</h5>
                                                     <div>
-                                                    <Link to='/people' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
+                                                        <Link to='/people' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                             <li className="list-inline-item event-list">
                                                 <div className={configure}>
                                                     <h5 className="font-size-16">Configure</h5>
                                                     <div>
-                                                    <Link to='/configure' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
+                                                        <Link to='/configure' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                             <li className="list-inline-item event-list">
                                                 <div className={validate}>
                                                     <h5 className="font-size-16">Validate</h5>
                                                     <div>
-                                                    <Link to='/validate' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
+                                                        <Link to='/validate' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                             <li className="list-inline-item event-list">
                                                 <div className={adopt}>
                                                     <h5 className="font-size-16">Adopt</h5>
                                                     <div>
-                                                    <Link to='/adopt' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
+                                                        <Link to='/adopt' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                             <li className="list-inline-item event-list">
                                                 <div className={success}>
                                                     <h5 className="font-size-16">Success</h5>
                                                     <div>
-                                                    <Link to='/success' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
+                                                        <Link to='/success' class="btn btn-primary btn-sm">More Info</Link>                                                    </div>
                                                 </div>
                                             </li>
                                         </ul>
@@ -106,7 +106,7 @@ const Landing = () => {
                         </div>
                     </div>
                 </div>
-}
+            }
         </>
     );
 };
