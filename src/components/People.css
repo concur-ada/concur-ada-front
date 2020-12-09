@@ -1,5 +1,5 @@
 .people {
-    padding: 30px;
+    padding: 10px;
 }
 
 .people-row {
@@ -18,6 +18,10 @@
     padding: 5px;
     border-radius: 15px;
     overflow: hidden;
+}
+
+.role-required {
+    background: red;
 }
 
 .role-pending {

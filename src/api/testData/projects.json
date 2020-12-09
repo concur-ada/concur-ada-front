@@ -29,10 +29,10 @@
         }
       },
       "configure": {
-        "status": "completed"
+        "status": "progress"
       },
       "validate": {
-        "status": "progress"
+        "status": "pending"
       },
       "adopt": {
         "status": "pending"
@@ -59,10 +59,10 @@
         }
       },
       "configure": {
-        "status": "completed"
+        "status": "pending"
       },
       "validate": {
-        "status": "progress"
+        "status": "pending"
       },
       "adopt": {
         "status": "pending"
