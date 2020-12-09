@@ -24,12 +24,12 @@ body{
     top: 38px;
     left: 0;
     right: 0;
-    width: 75px;
+    width: 125px;
     margin: 0 auto;
     border-radius: 4px;
     padding: 2px 4px;
 }
-@media (min-width: 1140px) {
+@media (min-width: 500px) {
     .hori-timeline .events .event-list {
         display: inline-block;
         width: 20%;
