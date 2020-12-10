@@ -20,6 +20,7 @@ const RoleTile = props => {
     const refEditDialog = useRef();
     const refName = useRef();
     const refEmail = useRef();
+    const refPhone = useRef();
     const handleHeaderClick = () => {
         refEditDialog.current.open();
     };
@@ -30,6 +31,7 @@ const RoleTile = props => {
         const updatedRoleInfo = {
             name: refName.current.value,
             email: refEmail.current.value,
+            phone: refPhone.current.value,
             role: roleInfo.role
         };
         if (!updatedRoleInfo.name || !updatedRoleInfo.email) {
@@ -63,6 +65,17 @@ const RoleTile = props => {
                            type="Email"
                            value={roleInfo.email}
                            required='true'/>
+                    </div>
+                </div>
+                <div className="row" style={{'padding': '10px'}}>
+                    <div className="col">
+                        <Label htmlFor='phone'>Phone :</Label>
+                        <Input id='phone'
+                               placeholder='Enter Phone No'
+                               ref={refPhone}
+                               maxlength='12'
+                               value={roleInfo.phone}
+                              />
                     </div>
                 </div>
             </div>
