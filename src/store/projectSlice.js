@@ -10,13 +10,13 @@ export const projectSlice = createSlice({
             state.project = action.payload;
         },
         updateRole: (state, action) => {
-            const {role, name, email} = action.payload;
+            const {role, name, email, phone} = action.payload;
             //update role details
             const people = state.project.stages.people;
             let hasRole = false;
             Object.keys(state.project.stages.people).forEach((key) => {
                 if (role === key) {
-                    people[key] = {name, email};
+                    people[key] = {name, email, phone};
                     hasRole = true;
                     return;
                 }
