@@ -19,6 +19,7 @@ import Configure from './Configure';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Invite from './invite';
 
 const App = () => (
     <Provider store={store}>
@@ -29,6 +30,9 @@ const App = () => (
                 <Switch>
                     <Route path='/home'>
                         <Home/>
+                    </Route>
+                    <Route path='/invite'>
+                        <Invite/>
                     </Route>
                     <Route path='/landing'>
                         <Landing/>
