@@ -12,7 +12,7 @@ import Header from './Header';
 import Home from './Home';
 import DemoCounter from './DemoCounter';
 import Footer from './Footer';
-import CircleProgressBar from './CompletionDial';
+import PercentageDial from './CompletionDial';
 import DaysDial from './DaysDial';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,7 +26,7 @@ const App = () => (
         <Switch>
           <Route path="/home">
             <Home />
-            <CircleProgressBar percentage={75} speed={50} />
+            <PercentageDial percentage={75} speed={50} />
             <DaysDial percentage={15} speed={50} />
           </Route>
           <Route path="/demoCounter">

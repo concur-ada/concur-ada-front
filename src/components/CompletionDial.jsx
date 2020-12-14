@@ -10,7 +10,7 @@ const circleConfig = {
   radio: '15.91549430918954',
 };
 
-const CircleProgressBarBase = ({
+const PercentageBase = ({
   className,
   strokeColor,
   strokeWidth,
@@ -91,7 +91,7 @@ const CircleProgressBarBase = ({
   );
 };
 
-CircleProgressBarBase.propTypes = {
+PercentageBase.propTypes = {
   className: string.isRequired,
   strokeColor: string,
   strokeWidth: number,
@@ -104,7 +104,7 @@ CircleProgressBarBase.propTypes = {
   speed: number,
 };
 
-CircleProgressBarBase.defaultProps = {
+PercentageBase.defaultProps = {
   strokeColor: 'blueviolet',
   strokeWidth: 1,
   innerText: 'Completed',
@@ -116,7 +116,7 @@ CircleProgressBarBase.defaultProps = {
   speed: 1,
 };
 
-const CircleProgressBar = styled(CircleProgressBarBase)`
+const PercentageDial = styled(PercentageBase)`
   max-width: ${(props) => props.maxSize};
   vertical-align: middle;
   .chart-text {
@@ -157,16 +157,16 @@ const CircleProgressBar = styled(CircleProgressBarBase)`
   }
 `;
 
-CircleProgressBar.propTypes = {
+PercentageDial.propTypes = {
   textColor: string,
   strokeColor: string,
   maxSize: string,
 };
 
-CircleProgressBar.defaultProps = {
+PercentageDial.defaultProps = {
   textColor: 'black',
   strokeColor: 'green',
   maxSize: '30vh',
 };
 
-export default CircleProgressBar;
+export default PercentageDial;
