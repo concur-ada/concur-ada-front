@@ -2,6 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './Landing.css';
+import Dials from './Dials.jsx';
 
 const Landing = () => {
     const {user} = useSelector(state => state.user);
@@ -57,7 +58,9 @@ const Landing = () => {
             </div>}
 
             {name &&
-            <div class="container-fluid">
+            <div style={{'marginTop': '40px'}}>
+                <Dials></Dials>
+            <div class="container-fluid" style={{'marginTop': '40px'}}>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -116,6 +119,7 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
+                </div>
             }
         </>
     );

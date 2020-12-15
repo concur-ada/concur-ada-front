@@ -9,14 +9,14 @@ const NameBadgeDisplay = () => {
 
   const {user} = useSelector(state => state.user);
     const name = user && user.name;
-    const badges = (user && user.badges) || 0;
+    const badges = (user && user.badges) || '';
 
   return (
     <div>
       <ThemeProvider>
         <Bar
           className='nameBadgeHeader'
-          contentLeft={<>Welcome {name}</>}
+          contentLeft={<> {name}</>}
           contentRight={<>{badges}<ui5-icon className="badgeIcon" style={{color:'#f0ab00', width:'30px', position:'relative',bottom:'5px'}}name="badge"></ui5-icon></>}
           design='Header'
           style={{backgroundColor:'black', height:'50px'}}

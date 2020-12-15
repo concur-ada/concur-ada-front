@@ -1,5 +1,7 @@
 {
   "project-1": {
+    "daysIn": 10,
+    "percentageCompleted": 20,
     "users": [
       {
         "login": "Sam",
@@ -43,6 +45,8 @@
     }
   },
   "project-2": {
+    "daysIn": 4,
+    "percentageCompleted": 5,
     "users": [
       {
         "login": "Mary",
