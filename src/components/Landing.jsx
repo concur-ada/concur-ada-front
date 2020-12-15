@@ -60,66 +60,66 @@ const Landing = () => {
             {name &&
             <div style={{'marginTop': '40px'}}>
                 <Dials></Dials>
-            <div class="container-fluid" style={{'marginTop': '40px'}}>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="hori-timeline" dir="ltr">
-                                    <ul class="list-inline events">
-                                        <li class="list-inline-item event-list">
-                                            <div className={start}>
-                                                <h5 className="font-size-16">Get Started</h5>
-                                                <div>
-                                                    <Link to='/people'
-                                                          class="btn btn-primary btn-sm">More
-                                                        Info</Link></div>
-                                            </div>
-                                        </li>
-                                        <li className="list-inline-item event-list">
-                                            <div className={configure}>
-                                                <h5 className="font-size-16">Configure</h5>
-                                                <div>
-                                                    <Link to='/configure'
-                                                          class="btn btn-primary btn-sm">More
-                                                        Info</Link></div>
-                                            </div>
-                                        </li>
-                                        <li className="list-inline-item event-list">
-                                            <div className={validate}>
-                                                <h5 className="font-size-16">Validate</h5>
-                                                <div>
-                                                    <Link to='/validate'
-                                                          class="btn btn-primary btn-sm">More
-                                                        Info</Link></div>
-                                            </div>
-                                        </li>
-                                        <li className="list-inline-item event-list">
-                                            <div className={adopt}>
-                                                <h5 className="font-size-16">Adopt</h5>
-                                                <div>
-                                                    <Link to='/adopt'
-                                                          class="btn btn-primary btn-sm">More
-                                                        Info</Link></div>
-                                            </div>
-                                        </li>
-                                        <li className="list-inline-item event-list">
-                                            <div className={success}>
-                                                <h5 className="font-size-16">Success</h5>
-                                                <div>
-                                                    <Link to='/success'
-                                                          class="btn btn-primary btn-sm">More
-                                                        Info</Link></div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                <div class="container-fluid" style={{'marginTop': '50px', 'backgroundColor': '#eee'}}>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="hori-timeline" dir="ltr">
+                                        <ul class="list-inline events">
+                                            <li class="list-inline-item event-list">
+                                                <div className={start}>
+                                                    <h5 className="font-size-16">Get Started</h5>
+                                                    <div>
+                                                        <Link to='/people'
+                                                              class="btn btn-primary btn-sm">More
+                                                            Info</Link></div>
+                                                </div>
+                                            </li>
+                                            <li className="list-inline-item event-list">
+                                                <div className={configure}>
+                                                    <h5 className="font-size-16">Configure</h5>
+                                                    <div>
+                                                        <Link to='/configure'
+                                                              class="btn btn-primary btn-sm">More
+                                                            Info</Link></div>
+                                                </div>
+                                            </li>
+                                            <li className="list-inline-item event-list">
+                                                <div className={validate}>
+                                                    <h5 className="font-size-16">Validate</h5>
+                                                    <div>
+                                                        <Link to='/validate'
+                                                              class="btn btn-primary btn-sm">More
+                                                            Info</Link></div>
+                                                </div>
+                                            </li>
+                                            <li className="list-inline-item event-list">
+                                                <div className={adopt}>
+                                                    <h5 className="font-size-16">Adopt</h5>
+                                                    <div>
+                                                        <Link to='/adopt'
+                                                              class="btn btn-primary btn-sm">More
+                                                            Info</Link></div>
+                                                </div>
+                                            </li>
+                                            <li className="list-inline-item event-list">
+                                                <div className={success}>
+                                                    <h5 className="font-size-16">Success</h5>
+                                                    <div>
+                                                        <Link to='/success'
+                                                              class="btn btn-primary btn-sm">More
+                                                            Info</Link></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                </div>
             }
         </>
     );
