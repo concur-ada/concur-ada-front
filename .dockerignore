@@ -1,0 +1,5 @@
+# Exclude node_modules
+node_modules
+
+# Exclude package-lock.json as yarn is used
+package-lock.json
