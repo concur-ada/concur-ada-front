@@ -14,8 +14,6 @@ import Home from './Home';
 import Landing from './Landing';
 import DemoCounter from './DemoCounter';
 import Footer from './Footer';
-import PercentageDial from './PercentageDial';
-import DaysDial from './DaysDial';
 import People from './People';
 import Configure from './Configure';
 
@@ -32,10 +30,6 @@ const App = () => (
         <Switch>
           <Route path="/home">
             <Home />
-            <div className="dials">
-              <PercentageDial percentage={75} speed={50} />
-              <DaysDial percentage={15} speed={50} />
-            </div>
           </Route>
           <Route path="/invite">
             <Invite />
