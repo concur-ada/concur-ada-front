@@ -1,9 +1,11 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {Redirect, Link} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import RoleTile from './RoleTile';
+import Dials from './Dials.jsx';
 import './People.css';
 import '@ui5/webcomponents-icons/dist/arrow-right';
+import PrevNextLinks from './PrevNextLinks';
 
 const stage = 'people';
 
@@ -18,7 +20,14 @@ const People = () => {
     });
 
     const status = people && people.status;
-    const nextLinkClass = status === 'completed' ? 'whatsNext': 'whatsNext disabled-link' ;
+
+    const prevNextLinks = {
+        hasPrevLink : false,
+        hasNextLink : true,
+        nextLinkText : 'Configure',
+        isNextLinkEnabled : status === 'completed' ? true: false
+    };
+
     const getRoleFromState = role => people && people[role];
     const title = {
         primarySponsor: 'Primary Sponsor',
@@ -43,8 +52,9 @@ const People = () => {
 
             <div className="container-fluid pageTitle">
                 <h3>Get Started</h3>
+                <h5>Please input the name, email address & phone number of each team member</h5>
             </div>
-
+            <Dials/>
             <div className="container-fluid people">
                 <div className="row people-row">
                     <RoleTile
@@ -78,35 +88,7 @@ const People = () => {
                 </div>
             </div>
 
-            <div id="preNextStage" className="container-fluid">
-                <div className="row justify-content-around">
-                    <div className="col-3">
-                        <div className="float-left" >
-
-                        </div>
-                    </div>
-                    <div className="col-3">
-                        <div className="float-none">
-                            <Link className='whatsNext' to='/landing'
-                                  style={{'textDecoration': 'none'}}>
-                                <h4>Home</h4>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-3">
-                        <div className="float-right">
-                            <Link className={nextLinkClass} to='/configure'
-                                  style={{'textDecoration': 'none'}}>
-                                <h4>Next: Configure</h4>
-                                <div className="arrow" style={{'marginLeft': '30px'}}>
-                                    <div className="right-pointer-line"></div>
-                                    <div className="right-pointer"></div>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <PrevNextLinks prevNextLinks={prevNextLinks}/>
         </>
     );
 };

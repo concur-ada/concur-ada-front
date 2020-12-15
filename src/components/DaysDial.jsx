@@ -107,7 +107,7 @@ DaysDialBase.propTypes = {
 DaysDialBase.defaultProps = {
   strokeColor: 'blueviolet',
   strokeWidth: 1,
-  innerText: 'days completed',
+  innerText: 'days',
   legendText: '',
   percentage: 0,
   trailStrokeWidth: 1,
