@@ -173,4 +173,4 @@ DaysDial.defaultProps = {
   maxSize: '20vh',
 };
 
-export { DaysDial };
+export default DaysDial;

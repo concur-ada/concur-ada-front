@@ -15,12 +15,13 @@ import Landing from './Landing';
 import DemoCounter from './DemoCounter';
 import Footer from './Footer';
 import PercentageDial from './PercentageDial';
-import { DaysDial } from './DaysDial';
+import DaysDial from './DaysDial';
 import People from './People';
 import Configure from './Configure';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Invite from './invite';
 
 const App = () => (
   <Provider store={store}>
@@ -36,10 +37,11 @@ const App = () => (
               <DaysDial percentage={15} speed={50} />
             </div>
           </Route>
+          <Route path="/invite">
+            <Invite />
+          </Route>
           <Route path="/landing">
             <Landing />
-            <PercentageDial percentage={75} speed={50} />
-            <DaysDial percentage={15} speed={50} />
           </Route>
           <Route path="/demoCounter">
             <DemoCounter />
