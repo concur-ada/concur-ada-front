@@ -4,7 +4,7 @@ import './Footer.css';
 
 const Footer = () => (
     <div className='footer'>
-        <p> Footer goes here </p>
+        <p> © Copyright 2020 Concur Technologies, Inc. All rights reserved.  </p>
     </div>
 );
 
