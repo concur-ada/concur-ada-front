@@ -9,7 +9,7 @@
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.2.2",
+    "@testing-library/user-event": "^12.5.0",
     "@ui5/webcomponents": "1.0.0-rc.10",
     "@ui5/webcomponents-fiori": "^1.0.0-rc.10",
     "@ui5/webcomponents-icons": "^1.0.0-rc.10",
@@ -53,7 +53,7 @@
     ]
   },
   "devDependencies": {
-    "husky": "^4.3.0"
+    "husky": "^4.3.5"
   },
   "husky": {
     "hooks": {

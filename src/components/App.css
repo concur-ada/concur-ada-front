@@ -1,3 +1,75 @@
+.pageTitle {
+  margin: 20px;
+  padding-left: 80px;
+}
 
+.disabled-link {
+  pointer-events: none;
+  color: grey;
+}
 
+.whatsNext {
+  height: auto;
+  padding: 12px;
+  margin: 10px;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
+.whatsNext:hover {
+  color: white;
+  background-color: grey;
+}
+
+.arrow {
+  width: 80px;
+}
+
+.right-pointer-line {
+  margin-top: 14px;
+  width: 50px;
+  background: orange;
+  height: 10px;
+  float: left;
+}
+
+.right-pointer {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 30px solid orange;
+  float: right;
+}
+
+.left-pointer-line {
+  margin-top: 14px;
+  width: 50px;
+  background: orange;
+  height: 10px;
+  float: right;
+}
+
+.left-pointer {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 30px solid orange;
+  float: left;
+}
+.nameBadgeHeader {
+  background-color: black;
+  margin-top: 5px;
+  color: #f0ab00;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.dials {
+  display: grid;
+  grid-template-columns: 20vh 20vh;
+  grid-template-rows: 20vw;
+}

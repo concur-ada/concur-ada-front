@@ -117,6 +117,10 @@ DaysDialBase.defaultProps = {
 };
 
 const DaysDial = styled(DaysDialBase)`
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
   max-width: ${(props) => props.maxSize};
   vertical-align: middle;
   .chart-text {
@@ -166,7 +170,7 @@ DaysDial.propTypes = {
 DaysDial.defaultProps = {
   textColor: 'black',
   strokeColor: 'green',
-  maxSize: '30vh',
+  maxSize: '20vh',
 };
 
-export default DaysDial;
+export { DaysDial };

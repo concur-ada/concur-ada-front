@@ -10,4 +10,6 @@ To get started go through
 
 ### [Available Scripts](docs/Scripts.md)
 
+### [Dockerizing the App](docs/Docker.md)
+
 ### [Learn More](docs/LearnMore.md)

@@ -117,6 +117,10 @@ PercentageBase.defaultProps = {
 };
 
 const PercentageDial = styled(PercentageBase)`
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
   max-width: ${(props) => props.maxSize};
   vertical-align: middle;
   .chart-text {
@@ -166,7 +170,7 @@ PercentageDial.propTypes = {
 PercentageDial.defaultProps = {
   textColor: 'black',
   strokeColor: 'green',
-  maxSize: '30vh',
+  maxSize: '20vh',
 };
 
 export default PercentageDial;
