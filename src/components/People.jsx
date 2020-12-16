@@ -6,6 +6,8 @@ import Dials from './Dials.jsx';
 import './People.css';
 import '@ui5/webcomponents-icons/dist/arrow-right';
 import PrevNextLinks from './PrevNextLinks';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
 
 const stage = 'people';
 
@@ -50,10 +52,15 @@ const People = () => {
         <>
             {user ? null : <Redirect to="/login"/>}
 
-            <div className="container-fluid pageTitle">
-                <h3>Get Started</h3>
-                <h5>Please input the name, email address & phone number of each team member</h5>
-            </div>
+            <Jumbotron fluid>
+        <Container>
+          <h1>
+            <b>Get Started</b>
+          </h1>
+          <p>Please input the name, email address & phone number of each team member</p>
+        </Container>
+      </Jumbotron>
+            
             <Dials/>
             <div className="container-fluid people">
                 <div className="row people-row">

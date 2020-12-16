@@ -1,13 +1,13 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './Landing.css';
 import Dials from './Dials.jsx';
 
 const Landing = () => {
-    const {user} = useSelector(state => state.user);
+    const { user } = useSelector(state => state.user);
     const name = user && user.name;
-    const {project} = useSelector(state => state.project);
+    const { project } = useSelector(state => state.project);
     let start, configure, validate, adopt, success;
     configure = start = validate = adopt = success = 'event-date bg-soft-primary';
     const projectStages = project && project.stages;
@@ -52,74 +52,75 @@ const Landing = () => {
     return (
         <>
             {!name &&
-            <div>
-                <h3>Hey, {name} nice to see you</h3>
-                <span>Login (click on the Avatar link on top right) to checkout the implementation journey of Concur Expense</span>
-            </div>}
+                <div>
+                    <h3>Hey, {name} nice to see you</h3>
+                    <span>Login (click on the Avatar link on top right) to checkout the implementation journey of Concur Expense</span>
+                </div>}
 
             {name &&
-            <div style={{'marginTop': '40px'}}>
-                <Dials></Dials>
-                <div class="container-fluid" style={{'marginTop': '50px', 'backgroundColor': '#eee'}}>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="hori-timeline" dir="ltr">
-                                        <ul class="list-inline events">
-                                            <li class="list-inline-item event-list">
-                                                <div className={start}>
-                                                    <h5 className="font-size-16">Get Started</h5>
-                                                    <div>
-                                                        <Link to='/people'
-                                                              class="btn btn-primary btn-sm">More
-                                                            Info</Link></div>
-                                                </div>
-                                            </li>
-                                            <li className="list-inline-item event-list">
-                                                <div className={configure}>
-                                                    <h5 className="font-size-16">Configure</h5>
-                                                    <div>
-                                                        <Link to='/configure'
-                                                              class="btn btn-primary btn-sm">More
-                                                            Info</Link></div>
-                                                </div>
-                                            </li>
-                                            <li className="list-inline-item event-list">
-                                                <div className={validate}>
-                                                    <h5 className="font-size-16">Validate</h5>
-                                                    <div>
-                                                        <Link to='/validate'
-                                                              class="btn btn-primary btn-sm">More
-                                                            Info</Link></div>
-                                                </div>
-                                            </li>
-                                            <li className="list-inline-item event-list">
-                                                <div className={adopt}>
-                                                    <h5 className="font-size-16">Adopt</h5>
-                                                    <div>
-                                                        <Link to='/adopt'
-                                                              class="btn btn-primary btn-sm">More
-                                                            Info</Link></div>
-                                                </div>
-                                            </li>
-                                            <li className="list-inline-item event-list">
-                                                <div className={success}>
-                                                    <h5 className="font-size-16">Success</h5>
-                                                    <div>
-                                                        <Link to='/success'
-                                                              class="btn btn-primary btn-sm">More
-                                                            Info</Link></div>
-                                                </div>
-                                            </li>
-                                        </ul>
+                <div style={{ 'marginTop': '40px' }}>
+                    <Dials></Dials>
+                    <div class="container-fluid" style={{ 'marginTop': '40px' }}>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="hori-timeline" dir="ltr">
+                                            <ul class="list-inline events">
+                                                <li class="list-inline-item event-list">
+                                                    <div className={start}>
+                                                        <h4>Start</h4>
+                                                        <div>
+                                                            <Link to='/people'
+                                                                class="btn btn-primary btn-xs">More
+                                                        Info</Link></div>
+                                                    </div>
+                                                </li>
+                                                <li className="list-inline-item event-list">
+                                                    <div className={configure}>
+                                                        <h4>Configure</h4>
+                                                        <div>
+                                                            <Link to='/configure'
+                                                                class="btn btn-primary btn-xs">More
+                                                        Info</Link></div>
+                                                    </div>
+                                                </li>
+                                                <li className="list-inline-item event-list">
+                                                    <div className={validate}>
+                                                        <h4>Validate</h4>
+                                                        <div>
+                                                            <Link to='/validate'
+                                                                class="btn btn-primary btn-xs">More
+                                                        Info</Link></div>
+                                                    </div>
+                                                </li>
+                                                <li className="list-inline-item event-list">
+                                                    <div className={adopt}>
+                                                        <h4>Adopt</h4>
+                                                        <div>
+                                                            <Link to='/adopt'
+                                                                class="btn btn-primary btn-xs">More
+                                                        Info</Link></div>
+                                                    </div>
+                                                </li>
+                                                <li className="list-inline-item event-list">
+                                                    <div className={success}>
+                                                        <h4>Success</h4>
+                                                        <div>
+                                                            <Link to='/success'
+                                                                class="btn btn-primary btn-xs">More
+                                                        Info</Link></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             }
         </>
     );

@@ -19,5 +19,12 @@
     "role": "Primary Sponsor",
     "badges": 2,
     "projectKey": "project-2"
+  },
+  {
+    "login": "tim",
+    "name": "Tim Macdonald",
+    "role": "Primary Sponsor",
+    "badges": 4,
+    "projectKey": "project-3"
   }
 ]

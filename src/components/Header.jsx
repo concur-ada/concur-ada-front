@@ -32,7 +32,12 @@ const Header = () => {
             //populate redux store with the new user info
             dispatch(loginAction(refUserName.current.value));
             //redirect to landing page after a login
+            if(refUserName.current.value==='tim'){
+                history.push('/invite');
+
+            }else{
             history.push('/landing');
+            }
             refLoginDialog.current.close();
         });
     }, [dispatch, history]);
@@ -51,7 +56,7 @@ const Header = () => {
                 onLogoClick={function noRefCheck() {
                 }}
                 onProfileClick={handleProfileClick}
-                primaryTitle="PRODUCTS"
+                primaryTitle="ADA"
                 profile={<Avatar icon='customer'/>}
                 startButton={<Link slot='startButton' to='/landing'>
                     <ui5-button icon='nav-back' design='Transparent' style={{'color': 'white'}}
