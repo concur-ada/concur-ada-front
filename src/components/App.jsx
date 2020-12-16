@@ -16,6 +16,7 @@ import DemoCounter from './DemoCounter';
 import Footer from './Footer';
 import People from './People';
 import Configure from './Configure';
+import Learn from './Learn';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -45,6 +46,9 @@ const App = () => (
           </Route>
           <Route path="/configure">
             <Configure />
+          </Route>
+          <Route path="/learn">
+            <Learn />
           </Route>
           <Redirect from="/" to="/landing" />
         </Switch>

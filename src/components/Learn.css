@@ -1,0 +1,24 @@
+body {
+  padding-bottom: 5vh;
+}
+.learning-hero {
+  width: 100%;
+}
+
+ui5-title {
+  color: aliceblue;
+  position: relative;
+  bottom: 400px;
+  left: 100px;
+  font-size: 40px;
+}
+
+ui5-panel {
+  font-size: large;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+h2 {
+  padding-left: 2vw;
+}
