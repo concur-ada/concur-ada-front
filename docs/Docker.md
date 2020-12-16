@@ -16,7 +16,7 @@
 
 `docker image ls concur-ada-front`
 
-3. Run the container
+3. Run the container locally
 
 `docker run -it -p 80:8080 concur-ada-front`
 

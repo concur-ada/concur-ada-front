@@ -8,7 +8,7 @@ import '@ui5/webcomponents/dist/Icon.js';
 const NameBadgeDisplay = () => {
 
   const {user} = useSelector(state => state.user);
-    const name = user && user.name;
+    const name = (user && user.name) || 'Welcome';
     const badges = (user && user.badges) || '';
 
   return (
