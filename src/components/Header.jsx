@@ -51,7 +51,7 @@ const Header = () => {
                 onLogoClick={function noRefCheck() {
                 }}
                 onProfileClick={handleProfileClick}
-                primaryTitle="PRODUCTS"
+                primaryTitle="ADA"
                 profile={<Avatar icon='customer'/>}
                 startButton={<Link slot='startButton' to='/landing'>
                     <ui5-button icon='nav-back' design='Transparent' style={{'color': 'white'}}
