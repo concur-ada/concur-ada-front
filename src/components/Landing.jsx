@@ -69,46 +69,46 @@ const Landing = () => {
                                     <ul class="list-inline events">
                                         <li class="list-inline-item event-list">
                                             <div className={start}>
-                                                <h5 className="font-size-16">Get Started</h5>
+                                                <h4>Start</h4>
                                                 <div>
                                                     <Link to='/people'
-                                                          class="btn btn-primary btn-sm">More
+                                                          class="btn btn-primary btn-xs">More
                                                         Info</Link></div>
                                             </div>
                                         </li>
                                         <li className="list-inline-item event-list">
                                             <div className={configure}>
-                                                <h5 className="font-size-16">Configure</h5>
+                                                <h4>Configure</h4>
                                                 <div>
                                                     <Link to='/configure'
-                                                          class="btn btn-primary btn-sm">More
+                                                          class="btn btn-primary btn-xs">More
                                                         Info</Link></div>
                                             </div>
                                         </li>
                                         <li className="list-inline-item event-list">
                                             <div className={validate}>
-                                                <h5 className="font-size-16">Validate</h5>
+                                                <h4>Validate</h4>
                                                 <div>
                                                     <Link to='/validate'
-                                                          class="btn btn-primary btn-sm">More
+                                                          class="btn btn-primary btn-xs">More
                                                         Info</Link></div>
                                             </div>
                                         </li>
                                         <li className="list-inline-item event-list">
                                             <div className={adopt}>
-                                                <h5 className="font-size-16">Adopt</h5>
+                                                <h4>Adopt</h4>
                                                 <div>
                                                     <Link to='/adopt'
-                                                          class="btn btn-primary btn-sm">More
+                                                          class="btn btn-primary btn-xs">More
                                                         Info</Link></div>
                                             </div>
                                         </li>
                                         <li className="list-inline-item event-list">
                                             <div className={success}>
-                                                <h5 className="font-size-16">Success</h5>
+                                                <h4>Success</h4>
                                                 <div>
                                                     <Link to='/success'
-                                                          class="btn btn-primary btn-sm">More
+                                                          class="btn btn-primary btn-xs">More
                                                         Info</Link></div>
                                             </div>
                                         </li>
