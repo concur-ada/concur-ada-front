@@ -47,7 +47,7 @@ const Invite = () => {
                 </tr>
                 <tr>
                     <td><p>Job Title:</p></td>
-                    <td><input id="jobTitle" type="text" placeholder="Enter Job Title" value ={role} required></input></td>
+                    <td><input id="jobTitle" type="text" placeholder="Enter Job Title" required></input></td>
                 </tr>
                 <tr>
                     <td><p>Choose a role from this list or enter your own:</p></td>
@@ -56,7 +56,7 @@ const Invite = () => {
                             <input id="selectedRole" list="roles" name="roleList" placeholder="Enter or Select Role" required></input>
                         </label>
                         <datalist id="roles">
-                            <option value="Executive Sponsor"></option>
+                            <option value="Primary Sponsor"></option>
                             <option value="Finance Project Lead"></option>
                             <option value="Finance Manager"></option>
                         </datalist></td>

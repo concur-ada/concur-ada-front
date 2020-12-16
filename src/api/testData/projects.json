@@ -83,19 +83,19 @@
     }
   },
   "project-3": {
-    "daysIn": 4,
-    "percentageCompleted": 5,
+    "daysIn": 1,
+    "percentageCompleted": 2,
     "users": [
       {
         "login": "tim",
         "name": "Tim McDonald",
-        "role": "projectManager"
+        "role": "primarySponsor"
       }
     ],
     "stages": {
       "people": {
-        "status": "progress",
-        "projectManager": {
+        "status": "pending",
+        "primarySponsor": {
           "name": "Tim McDonald",
           "email": "tim@company.com"
         }
