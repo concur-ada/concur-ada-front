@@ -10,7 +10,6 @@ const Invite = () => {
     const history = useHistory();
     const { user } = useSelector(state => state.user);
     let name = user && user.name;
-    let role = user && user.role;
     const submitClick = () => {
         let GDPR = document.getElementById('GDPR').checked;
 
