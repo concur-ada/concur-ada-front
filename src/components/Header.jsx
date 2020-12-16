@@ -32,7 +32,12 @@ const Header = () => {
             //populate redux store with the new user info
             dispatch(loginAction(refUserName.current.value));
             //redirect to landing page after a login
+            if(refUserName.current.value==='tim'){
+                history.push('/invite');
+
+            }else{
             history.push('/landing');
+            }
             refLoginDialog.current.close();
         });
     }, [dispatch, history]);
