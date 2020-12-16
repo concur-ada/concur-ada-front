@@ -12,7 +12,7 @@ const ButtonMailto = ({ mailto, label }) => {
         e.preventDefault();
       }}
       slot=''
-      style={{ marginLeft: '1450px' }}
+      style={{ position:'relative', left:'1%'}}
       tooltip='Mailto'
     >
       {' '}
